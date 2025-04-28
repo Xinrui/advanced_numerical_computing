@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 
-
 void print_matrix(double A[4][4]);
 void print_vector(double b[4]);
 void print_linear_system(double A[4][4], double b[4]);
