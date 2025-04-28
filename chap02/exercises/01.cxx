@@ -1,11 +1,13 @@
+#include <gtest/gtest.h>
+
 #include <stdio.h>
+
 
 void print_matrix(double A[4][4]);
 void print_vector(double b[4]);
 void print_linear_system(double A[4][4], double b[4]);
 
-int main() {
-	
+TEST(Chapter02, Exercise01) {
 	double A[4][4] = {
 		{16,-12,2,4},
 		{12, -8, 6,10},
@@ -52,11 +54,12 @@ int main() {
 		x[i] = (b[i] - sum) / A[i][i];
 	}
 
-	print_vector(x);
-
-
-	return;
+	double x_ref[4] = { 9.0454,   11.4884,   -5.9747,	5.5211 };
+	for (int i = 0; i < 4; ++i) {
+		EXPECT_NEAR(x[i], x_ref[i], 1e-4);
+	}
 }
+
 
 void print_matrix(double A[4][4])
 {
