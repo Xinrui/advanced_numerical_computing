@@ -26,7 +26,7 @@ int main() {
 		{
 			double m = -A[j][i] / A[i][i];
 
-			for (int k = 0; k < 4; ++k) {
+			for (int k = i; k < 4; ++k) {
 				A[j][k] += A[i][k] * m;
 			}
 			b[j] += b[i] * m;
