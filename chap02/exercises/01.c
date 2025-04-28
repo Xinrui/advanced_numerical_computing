@@ -20,6 +20,7 @@ int main() {
 	print_linear_system(A, b);
 	printf("\n");
 
+	// forward elimination
 	for (int i = 0; i < 4; ++i)
 	{
 		for (int j = i + 1; j < 4; ++j)
@@ -33,10 +34,26 @@ int main() {
 
 			print_linear_system(A, b);
 			printf("\n");
-
-			int foo = 1;
 		}
 	}
+
+	// backward substitution
+	double x[4];
+
+	x[3] = b[3] / A[3][3];
+
+	for (int i = 2; i >= 0; --i) {
+		double sum = 0.0;
+		for (int k = i + 1; k < 4; ++k)
+		{
+			sum += A[i][k] * x[k];
+		}
+
+		x[i] = (b[i] - sum) / A[i][i];
+	}
+
+	print_vector(x);
+
 
 	return;
 }
