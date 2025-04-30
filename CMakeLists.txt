@@ -14,3 +14,5 @@ FetchContent_MakeAvailable(googletest)
 include_directories(external/eigen)
 
 add_subdirectory(chap02)
+
+add_subdirectory(mumps_algo)
