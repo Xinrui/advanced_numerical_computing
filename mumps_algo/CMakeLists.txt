@@ -1,6 +1,11 @@
 add_library(mumps_algo)
 
-target_sources(mumps_algo PRIVATE include/Doolittle.h src/Doolittle.cpp)
+target_sources(mumps_algo PRIVATE 
+	include/Doolittle.h 
+	include/Factorization.h
+	src/Doolittle.cpp
+	src/Factorization.cpp
+)
 
 target_include_directories(mumps_algo PUBLIC include)
 
