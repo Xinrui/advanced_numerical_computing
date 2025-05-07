@@ -9,6 +9,6 @@ target_sources(mumps_algo PRIVATE
 
 target_include_directories(mumps_algo PUBLIC include)
 
-add_executable(mumps_algo_testrunner test/Doolittle.cpp)
+add_executable(mumps_algo_testrunner test/LU_Factorization.cpp)
 
 target_link_libraries(mumps_algo_testrunner GTest::gtest_main mumps_algo)

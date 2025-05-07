@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(DOOLITTLE, 01) {
+TEST(LU_Factorization, Doolittle) {
 	Eigen::MatrixXd A {
 
 		{1, 2, 3, 4},
@@ -24,7 +24,7 @@ TEST(DOOLITTLE, 01) {
 	ASSERT_EQ(A, Aref);
 }
 
-TEST(DENSE_RIGHT_LOOKING, 01) {
+TEST(LU_Factorization, DenseRightLooking) {
 	Eigen::MatrixXd A{
 
 		{1, 2, 3, 4},
