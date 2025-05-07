@@ -10,11 +10,11 @@ void Doolittle(Eigen::MatrixXd& A)
 
 	for (int p = 1; p < n; ++p) {
 		
-		// step 1
+		// step 1: FACTO
 		// A(p+1: n, p) /= a_pp
 		A.block(p, p - 1, n - p, 1) /= A(p - 1, p - 1);
 
-		// step 2
+		// step 2: UPDATE
 		// A(p+1: n, p+1: n) -= A(p+1: n, p) * A(p, p+1:n)
 
 		auto block1 = A.block(p, p - 1, n - p, 1);
